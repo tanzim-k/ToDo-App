@@ -19,10 +19,15 @@ function App() {
         }));
     }
   }, [todoItems])
+
+  function addNewTodoItem() {
+    fetch(`http://localhost:8080/`)
+  }
+
   return (
     <div>
       <div>
-        <button>Add New Task</button>
+        <button onClick={addNewTodoItem}>Add New Task</button>
       </div>
       <div>
         {todoItems
