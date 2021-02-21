@@ -5,21 +5,26 @@ const TodoItem = (props) => {
 
     useEffect(() => {
         fetch(`http://localhost:8080/todoItems/${todoItem.id}`, {
-            method: 'PUT',
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
             body: JSON.stringify(todoItem),
         })
-    }, [todoItem])
-
-    function updateIsDone() {
-        setTodoItem({ ...todoItem, isDone: !todoItem.isDone })
-    }
+            .then((response) => response.json())
+            .then((data) => {
+                setTodoItem(data);
+            })
+    }, [todoItem]);
 
     return (
         <>
             <input
                 type="checkbox"
                 checked={todoItem.isDone}
-                onChange={updateIsDone}
+                onChange={() => {
+                    return setTodoItem({ ...todoItem, isDone: !todoItem.isDone })
+                }}
             />
             <span>{todoItem.task}</span>
         </>
