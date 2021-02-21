@@ -23,6 +23,12 @@ public class TodoController {
         return ResponseEntity.ok(todoItems);
     }
 
+    @PostMapping("/todoItems")
+    public ResponseEntity<?> createNewItem () {
+        todoService.createTodoItem();
+
+    }
+
     @PutMapping("/todoItems/{id}")
     public ResponseEntity<?> updateTodoItem (@PathVariable Integer id, @RequestBody TodoItem todoItem) {
         List<TodoItem> todoItems = todoService.fetchAllTodoItems();
