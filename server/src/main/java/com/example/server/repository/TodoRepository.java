@@ -18,7 +18,7 @@ public class TodoRepository {
             item1.setDone(false);
             item1.setTask("Task #1");
 
-            
+            todoItems.add(item1);
 
         }
         return todoItems;
