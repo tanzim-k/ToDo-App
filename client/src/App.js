@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 import { Fragment, useEffect, useState } from 'react';
@@ -22,11 +21,16 @@ function App() {
   }, [todoItems])
   return (
     <div>
-      {todoItems
-        ? todoItems.map(todoItem => {
-          return <TodoItem key={todoItem.id} data={todoItem} />
-        })
-        : 'loading'}
+      <div>
+        <button>Add New Task</button>
+      </div>
+      <div>
+        {todoItems
+          ? todoItems.map(todoItem => {
+            return <TodoItem key={todoItem.id} data={todoItem} />
+          })
+          : 'loading'}
+      </div>
     </div>
   );
 }
