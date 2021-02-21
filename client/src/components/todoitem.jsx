@@ -4,7 +4,10 @@ const TodoItem = (props) => {
     const [todoItem, setTodoItem] = useState(props.data);
 
     useEffect(() => {
-        console.log("to do item changed", todoItem)
+        fetch(`http://localhost:8080/todoItems/${todoItem.id}`, {
+            method: 'PUT',
+            body: JSON.stringify(todoItem),
+        })
     }, [todoItem])
 
     function updateIsDone() {
