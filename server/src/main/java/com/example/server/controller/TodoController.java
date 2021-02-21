@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
-@RequestMapping("/todoItems")
+@RequestMapping
 public class TodoController {
 
     @Autowired
     private TodoService todoService;
-    @GetMapping
+
+    @GetMapping("/todoItems/")
     public ResponseEntity<?> fetchAllTodoItems () {
         List<TodoItem> todoItems = todoService.fetchAllTodoItems();
 
