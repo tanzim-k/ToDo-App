@@ -12,12 +12,12 @@ function App() {
     console.log("testing")
 
     if (!todoItems) {
-      fetch('http://localhost:8080/todoItems').then((response) =>
-        response.json()
-      ).then((data => {
-        console.log("Todo items list ", data)
-        setTodoItems(data);
-      }));
+      fetch('http://localhost:8080/todoItems/')
+        .then((response) => response.json())
+        .then((data => {
+          console.log("Todo items list ", data)
+          setTodoItems(data);
+        }));
     }
   }, [todoItems])
   return (
