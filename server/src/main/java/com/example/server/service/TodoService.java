@@ -32,4 +32,11 @@ public class TodoService {
         }
         return null;
     }
+
+    public void createTodoItem() {
+        TodoItem todoItem = new TodoItem();
+
+        todoItem.setIsDone(false);
+        todoItem.setTask(task);
+    }
 }
