@@ -18,6 +18,6 @@ public class TodoController {
     public ResponseEntity<?> fetchAllTodoItems () {
         List<TodoItem> todoItems = todoService.fetchAllTodoItems();
 
-        return ResponseEntity.status(HttpStatus.OK).body(todoItems);
+        return ResponseEntity.ok(todoItems);
     }
 }
