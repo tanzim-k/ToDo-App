@@ -1,5 +1,6 @@
 package com.example.server.domain;
 
+
 public class TodoItem {
 
     private Integer id;
@@ -22,11 +23,11 @@ public class TodoItem {
         this.task = task;
     }
 
-    public Boolean getDone() {
+    public Boolean getIsDone() {
         return isDone;
     }
 
-    public void setDone(Boolean done) {
-        isDone = done;
+    public void setIsDone(Boolean done) {
+        this.isDone = done;
     }
 }
