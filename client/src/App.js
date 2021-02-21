@@ -9,7 +9,9 @@ function App() {
 
     fetch('http://localhost:8080/todoItems').then((response) =>
       response.json()
-    );
+    ).then(todoItems => {
+      console.log(todoItems)
+    });
   })
   return (
     <div>Hello world</div>
