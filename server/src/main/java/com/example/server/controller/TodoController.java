@@ -25,7 +25,9 @@ public class TodoController {
 
     @PostMapping("/todoItems")
     public ResponseEntity<?> createNewItem () {
-        todoService.createTodoItem();
+        TodoItem todoItem = todoService.createTodoItem();
+
+        return ResponseEntity.ok(todoItem);
 
     }
 
