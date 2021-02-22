@@ -32,7 +32,7 @@ const TodoItem = (props) => {
                     setTodoItem({ ...todoItem, isDone: !todoItem.isDone })
                 }}
             />
-            <span>{todoItem.task}</span>
+            <input type='text' value={todoItem.task} />
         </div>
     )
 };
