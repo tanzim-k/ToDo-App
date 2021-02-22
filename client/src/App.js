@@ -21,7 +21,16 @@ function App() {
   }, [todoItems])
 
   function addNewTodoItem() {
-    fetch(`http://localhost:8080/`)
+    fetch(`http://localhost:8080/todoItems/`, {
+      headers: {
+        'content-type': 'application/json'
+      },
+      method: 'POST',
+    })
+      .then((response) => response.json())
+      .then((aTodoItem) => {
+        console.log(aTodoItem);
+      })
   }
 
   return (
