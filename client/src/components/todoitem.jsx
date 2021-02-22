@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const TodoItem = (props) => {
+    const { emitDeleteTodoItem } = props;
     const [todoItem, setTodoItem] = useState(props.data);
     const [isModified, setModified] = useState(false);
 
@@ -36,8 +37,7 @@ const TodoItem = (props) => {
         })
             .then((response) => response.json())
             .then((data) => {
-                setModified(false);
-                setTodoItem(data);
+                emitDeleteTodoItem(todoItem)
             });
     }
 
@@ -59,7 +59,12 @@ const TodoItem = (props) => {
 
 
                     )}
-            <span style={{ marginLeft: "2rem", cursor: "pointer" }} onClick={deleteTodoItem} >⛔</span>
+            <span
+                style={{ marginLeft: "2rem", cursor: "pointer" }}
+                onClick={deleteTodoItem}
+            >
+                ⛔
+                </span>
         </div>
     )
 };
