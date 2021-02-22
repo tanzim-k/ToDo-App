@@ -23,7 +23,7 @@ const TodoItem = (props) => {
     }, [todoItem, isModified]);
 
     return (
-        <>
+        <div>
             <input
                 type="checkbox"
                 checked={todoItem.isDone}
@@ -33,7 +33,7 @@ const TodoItem = (props) => {
                 }}
             />
             <span>{todoItem.task}</span>
-        </>
+        </div>
     )
 };
 
