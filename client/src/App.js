@@ -30,6 +30,8 @@ function App() {
       .then((response) => response.json())
       .then((aTodoItem) => {
         console.log(aTodoItem);
+
+        setTodoItems([...todoItems, aTodoItem]);
       })
   }
 
