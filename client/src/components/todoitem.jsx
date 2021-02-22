@@ -22,6 +22,10 @@ const TodoItem = (props) => {
 
     }, [todoItem, isModified]);
 
+    function updateTask() {
+        setTodoItem({ ...todoItem, task: "testing" });
+    }
+
     return (
         <div>
             <input
@@ -32,7 +36,7 @@ const TodoItem = (props) => {
                     setTodoItem({ ...todoItem, isDone: !todoItem.isDone })
                 }}
             />
-            <input type='text' value={todoItem.task} />
+            <input type='text' value={todoItem.task} onChange={updateTask} />
         </div>
     )
 };
