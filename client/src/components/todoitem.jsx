@@ -23,6 +23,7 @@ const TodoItem = (props) => {
     }, [todoItem, isModified]);
 
     function updateTask(e) {
+        setModified(true)
         setTodoItem({ ...todoItem, task: e.target.value });
     }
 
@@ -36,7 +37,15 @@ const TodoItem = (props) => {
                     setTodoItem({ ...todoItem, isDone: !todoItem.isDone })
                 }}
             />
-            <input type='text' value={todoItem.task} onChange={updateTask} />
+            {
+                todoItem.isDone ? (
+                    <span>{todoItem.task}</span>
+                ) : (
+                        <input type='text' value={todoItem.task} onChange={updateTask} />
+
+
+                    )}
+
         </div>
     )
 };
