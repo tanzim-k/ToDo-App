@@ -35,6 +35,11 @@ function App() {
       })
   }
 
+  function handleDeleteTodoItem(item) {
+    const updatedTodoItems = todoItems.filter(aTodoItem => aTodoItem.id !== item.id);
+    setTodoItems([...updatedTodoItems]);
+  }
+
   return (
     <div>
       <div>
@@ -43,7 +48,7 @@ function App() {
       <div>
         {todoItems
           ? todoItems.map(todoItem => {
-            return <TodoItem key={todoItem.id} data={todoItem} />
+            return <TodoItem key={todoItem.id} data={todoItem} emitDeleteTodoItem={handleDeleteTodoItem} />
           })
           : 'loading'}
       </div>
