@@ -23,4 +23,10 @@ public class TodoRepository {
         }
         return todoItems;
     }
+
+    public TodoItem save (TodoItem todoItem) {
+        todoItem.setId(idCounter++);
+        todoItems.add(todoItem);
+        return todoItem;
+    }
 }
