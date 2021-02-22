@@ -39,13 +39,13 @@ const TodoItem = (props) => {
             />
             {
                 todoItem.isDone ? (
-                    <span>{todoItem.task}</span>
+                    <span style={{ textDecoration: "line-through" }}>{todoItem.task}</span>
                 ) : (
                         <input type='text' value={todoItem.task} onChange={updateTask} />
 
 
                     )}
-
+            <span style={{ marginLeft: "2rem", cursor: "pointer" }} onClick={deleteTodoItem} >⛔</span>
         </div>
     )
 };
