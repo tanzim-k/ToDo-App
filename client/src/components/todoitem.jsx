@@ -27,6 +27,20 @@ const TodoItem = (props) => {
         setTodoItem({ ...todoItem, task: e.target.value });
     }
 
+    function deleteTodoItem() {
+        fetch(`http://localhost:8080/todoItems/${todoItem.id}`, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json",
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setModified(false);
+                setTodoItem(data);
+            });
+    }
+
     return (
         <div>
             <input
