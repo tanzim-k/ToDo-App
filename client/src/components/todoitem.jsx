@@ -22,8 +22,8 @@ const TodoItem = (props) => {
 
     }, [todoItem, isModified]);
 
-    function updateTask() {
-        setTodoItem({ ...todoItem, task: "testing" });
+    function updateTask(e) {
+        setTodoItem({ ...todoItem, task: e.target.value });
     }
 
     return (
