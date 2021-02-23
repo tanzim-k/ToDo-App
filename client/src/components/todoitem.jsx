@@ -35,8 +35,7 @@ const TodoItem = (props) => {
                 "content-type": "application/json",
             },
         })
-            .then((response) => response.json())
-            .then((data) => {
+            .then((response) => {
                 emitDeleteTodoItem(todoItem)
             });
     }
