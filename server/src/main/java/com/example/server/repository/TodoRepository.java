@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class TodoRepository {
@@ -28,5 +29,11 @@ public class TodoRepository {
         todoItem.setId(idCounter++);
         todoItems.add(todoItem);
         return todoItem;
+    }
+
+    public void delete(Integer id) {
+        todoItems = todoItems.stream()
+                .filter(todoItem -> !todoItem.getId().equals(id))
+                .collect(Collectors.toList());
     }
 }
