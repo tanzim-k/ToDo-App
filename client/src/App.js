@@ -11,7 +11,7 @@ function App() {
     console.log("testing")
 
     if (!todoItems) {
-      fetch('http://localhost:8080/todoItems/')
+      fetch('https://peaceful-woodland-23958.herokuapp.com/todoItems/')
         .then((response) => response.json())
         .then((data => {
           console.log("Todo items list ", data)
@@ -21,7 +21,7 @@ function App() {
   }, [todoItems])
 
   function addNewTodoItem() {
-    fetch(`http://localhost:8080/todoItems/`, {
+    fetch(`https://peaceful-woodland-23958.herokuapp.com/todoItems/`, {
       headers: {
         'content-type': 'application/json'
       },

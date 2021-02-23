@@ -7,7 +7,7 @@ const TodoItem = (props) => {
 
     useEffect(() => {
         if (isModified) {
-            fetch(`http://localhost:8080/todoItems/${todoItem.id}`, {
+            fetch(`https://peaceful-woodland-23958.herokuapp.com/todoItems/${todoItem.id}`, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json",
@@ -29,7 +29,7 @@ const TodoItem = (props) => {
     }
 
     function deleteTodoItem() {
-        fetch(`http://localhost:8080/todoItems/${todoItem.id}`, {
+        fetch(`https://peaceful-woodland-23958.herokuapp.com/todoItems/${todoItem.id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",
