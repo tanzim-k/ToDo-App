@@ -33,9 +33,16 @@ public class TodoController {
 
     @PutMapping("/todoItems/{id}")
     public ResponseEntity<?> updateTodoItem (@PathVariable Integer id, @RequestBody TodoItem todoItem) {
-        List<TodoItem> todoItems = todoService.fetchAllTodoItems();
 
         TodoItem updatedTodoItem = todoService.updateTodoItem(id, todoItem);
         return ResponseEntity.ok(updatedTodoItem);
     }
+
+    @DeleteMapping("/todoItems/{id}")
+    public ResponseEntity<?> deleteTodoItem (@PathVariable Integer id) {
+
+        todoService.deleteTodoItem(id);
+        return ResponseEntity.ok("deleted task");
+    }
+
 }
